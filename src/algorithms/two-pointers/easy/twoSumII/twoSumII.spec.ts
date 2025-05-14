@@ -106,28 +106,14 @@ const testCases: TestCase[] = [
   })(),
 ];
 
-const IDEAL_TIME_MS = 10;
-const IDEAL_MEMORY_KB_SMALL = 64;
-const IDEAL_MEMORY_KB_LARGE = 12000;
-
 describe('twoSumII', () => {
   testCases.forEach(({ nums, target, expected, description }, index) => {
-    const isLarge = index >= 6;
     const testName = description
       ? `${description} (n=${nums.length})`
       : `Random/Large case (n=${nums.length})`;
 
     it(testName, () => {
-      const startMem = process.memoryUsage().heapUsed;
-      const startTime = process.hrtime.bigint();
-
       const result = twoSumII(nums, target);
-
-      const endTime = process.hrtime.bigint();
-      const endMem = process.memoryUsage().heapUsed;
-
-      const timeMs = Number(endTime - startTime) / 1_000_000;
-      const memKb = (endMem - startMem) / 1024;
 
       let passed: boolean;
       if (expected && expected.length === 2 && index < 6) {
@@ -137,10 +123,6 @@ describe('twoSumII', () => {
       }
 
       expect(passed).toBe(true);
-      expect(timeMs).toBeLessThanOrEqual(IDEAL_TIME_MS);
-      expect(memKb).toBeLessThanOrEqual(
-        isLarge ? IDEAL_MEMORY_KB_LARGE : IDEAL_MEMORY_KB_SMALL,
-      );
     });
   });
 });

@@ -57,11 +57,11 @@ src/algorithms/hash-map/easy/twoSum/
 
 3. **Create Tests:**  
    Add test cases in `<problem>.test.ts` using Jest and the provided test utilities.  
-   Tests cover a range of input sizes (small to large), including random and edge cases, and can measure both time and memory usage.
+   Tests cover a range of input sizes (small to large), including random and edge cases.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 1. **Clone the repository:**
    ```sh
@@ -78,8 +78,7 @@ src/algorithms/hash-map/easy/twoSum/
    ```sh
    npm test
    ```
-   > Runs all `.test.ts` and `.spec.ts` files using Jest.  
-   > Reports pass/fail, and you can add time/memory checks if desired.
+   > Runs all `.test.ts` and `.spec.ts` files using Jest.
 
 ---
 
@@ -92,7 +91,6 @@ src/algorithms/hash-map/easy/twoSum/
   - Large arrays for performance
   - Randomized cases for robustness (with deterministic seeds if needed)
 - **Helpers** in `testUtils.ts` make it easy to generate and validate cases.
-- **Time and memory checks** can be included for performance-sensitive problems.
 
 ---
 
@@ -157,18 +155,60 @@ Each folder will have its own README for deep dives into that topic or pattern.
 - **Test:**  
   `npm test` — Runs all Jest tests.
 - **Lint:**  
-  `npm run lint` — Lints all code with ESLint.
+  `npm run lint` — Lints all code with ESLint (including `src/` and `scripts/`).
 - **Format:**  
-  `npm run format` — Checks formatting with Prettier.
+  `npm run format` — Checks formatting with Prettier (including `src/` and `scripts/`).
 - **Format Fix:**  
   `npm run format:fix` — Auto-formats code and markdown.
+- **Benchmarks:**  
+  `npm run benchmarks` — Runs all `*.benchmark.ts` files (across all folders) using Benchmark.js and prints a detailed performance table for each problem and input pattern.
+
+---
+
+## ⚡ Benchmarking
+
+This project includes **robust, automated benchmarking** for all solutions:
+
+- **How to run:**  
+  ```sh
+  npm run benchmarks
+
+- **What it does:**
+  - Finds and runs all `*.benchmark.ts` files (wherever they are in the repo).
+  - Benchmarks each solution on a variety of input sizes and patterns (sorted, reverse, random, edge cases).
+  - Prints a table for each problem with:
+    - Case name
+    - Operations per second (`ops/sec`)
+    - Average time per operation (`ms/op`)
+    - Relative margin of error (`±RME`)
+    - Number of samples
+  - Prints a summary of the fastest and slowest cases for each problem.
+
+- **Sample output:**
+
+  Benchmarking twoSum on various input patterns and sizes...
+
+  | Case                | ops/sec   | ms/op   | ±RME   | samples |
+  |---------------------|----------:|--------:|-------:|--------:|
+  | Sequential (n=100)  | 50000.00  | 0.0200  | ±1.23% |     100 |
+  | Reverse (n=100)     | 48000.00  | 0.0208  | ±1.10% |     100 |
+  | Random (n=100)      | 47000.00  | 0.0213  | ±1.15% |     100 |
+  | ...                 | ...       | ...     | ...    |    ...  |
+
+  **Fastest:**  Sequential (n=100) (0.0200 ms/op)  
+  **Slowest:**  Random (n=100000) (2.5000 ms/op)
+
+- **Why this matters:**  
+  - Lets you see how each solution scales and performs on different input types.
+  - Makes it easy to compare performance and spot bottlenecks.
+  - Great for learning, optimization, and interview prep.
 
 ---
 
 ## 🤝 Contributing
 
 Contributions are welcome!  
-You can add new problems, solutions, or improve test coverage.  
+You can add new problems, solutions, improve test coverage, or add benchmarks.
 **How to contribute:**
 1. Fork the repo and create a new branch.
 2. Add your problem/solution/test in the correct folder.
@@ -189,6 +229,7 @@ You can add new problems, solutions, or improve test coverage.
 - **Test edge cases:** Empty arrays, duplicates, negatives, large inputs.
 - **Review patterns:** Recognize when to use hash maps, two pointers, etc.
 - **Reflect:** After solving, write down what you learned and what you’d do differently.
+- **Benchmark your code:** Use the built-in benchmarking to see how your solution performs!
 
 ---
 

@@ -51,22 +51,12 @@ const testCases: TestCase[] = [
 
 describe('twoSum', () => {
   testCases.forEach(({ nums, target, expected, description }, index) => {
-    const isLarge = index >= 6;
     const testName = description
       ? `${description} (n=${nums.length})`
       : `Random/Large case (n=${nums.length})`;
 
     it(testName, () => {
-      const startMem = process.memoryUsage().heapUsed;
-      const startTime = process.hrtime.bigint();
-
       const result = twoSum(nums, target);
-
-      const endTime = process.hrtime.bigint();
-      const endMem = process.memoryUsage().heapUsed;
-
-      const timeMs = Number(endTime - startTime) / 1_000_000;
-      const memKb = (endMem - startMem) / 1024;
 
       let passed: boolean;
       if (expected && expected.length === 2 && index < 6) {
@@ -75,12 +65,7 @@ describe('twoSum', () => {
         passed = isValidTwoSumResult(nums, target, result);
       }
 
-      // Optional: log for info, not required
-      // console.log(`[${testName}] Time: ${timeMs.toFixed(3)} ms, Memory: ${memKb.toFixed(2)} KB, Passed: ${passed ? '✔' : '✖'}`);
-
       expect(passed).toBe(true);
-      expect(timeMs).toBeLessThanOrEqual(isLarge ? 20 : 20);
-      expect(memKb).toBeLessThanOrEqual(isLarge ? 12000 : 64);
     });
   });
 });

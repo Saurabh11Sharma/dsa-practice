@@ -4,13 +4,15 @@
   "description": "A book-style, test-driven DSA practice resource in TypeScript. Learn, code, and ace your interviews!",
   "scripts": {
     "build": "tsc",
-    "lint": "eslint \"src/**/*.{ts,tsx}\"",
-    "format": "prettier --check \"src/**/*.{ts,tsx,md}\"",
-    "format:fix": "prettier --write \"src/**/*.{ts,tsx,md}\"",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" \"scripts/**/*.{ts,tsx}\"",
+    "format": "prettier --check \"src/**/*.{ts,tsx,md}\" \"scripts/**/*.{ts,tsx,md}\"",
+    "format:fix": "prettier --write \"src/**/*.{ts,tsx,md}\" \"scripts/**/*.{ts,tsx,md}\"",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "benchmarks": "ts-node scripts/run-all-benchmarks.ts"
   },
   "devDependencies": {
+    "@types/benchmark": "^2.1.5",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.15.18",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
@@ -23,11 +25,22 @@
     "lint-staged": "^15.0.0",
     "prettier": "^3.0.0",
     "ts-jest": "^29.3.3",
+    "ts-node": "^10.9.2",
     "typescript": "^4.0.0"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
       "eslint --fix",
+      "prettier --write"
+    ],
+    "scripts/**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "src/**/*.md": [
+      "prettier --write"
+    ],
+    "scripts/**/*.md": [
       "prettier --write"
     ]
   },
@@ -51,5 +64,8 @@
     "open-source"
   ],
   "author": "Saurabh Sharma",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "benchmark": "^2.1.4"
+  }
 }
