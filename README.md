@@ -120,22 +120,3 @@ You can add new problems, solutions, or improve test coverage. Please follow the
 ## 📄 License
 
 This project is open-source and available under the [MIT License](LICENSE).
-
----
-
-## 🌐 Publishing to GitHub
-
-1. [Create a new repository on GitHub](https://github.com/new).
-2. Follow these commands in your project directory:
-   ```sh
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin https://github.com/<your-username>/dsa-practice.git
-   git branch -M main
-   git push -u origin main
-   ```
-
----
-
-Happy coding and learning! 🚀
