@@ -5,12 +5,53 @@
 
 # 📚 DSA Practice Project
 
-This project is designed to help you **practice and master Data Structures and Algorithms (DSA)** through hands-on problem-solving and coding exercises in TypeScript.  
+This project helps you **practice and master Data Structures and Algorithms (DSA)** through hands-on problem-solving and coding exercises in TypeScript.  
 It is structured like a "DSA Book"—with categorized problems, detailed solutions, robust testing, and rich learning content.
 
 ---
-⭐️ If you find this project helpful, please consider giving it a star!  
-Your support helps others discover this resource and motivates further development.
+
+## 📑 Table of Contents
+
+- [How to Use This Repo](#-how-to-use-this-repo)
+- [Project Structure](#-project-structure)
+- [Algorithm Categories](#-algorithm-categories)
+- [Workflow](#-workflow)
+- [Getting Started](#getting-started)
+- [Testing Philosophy](#-testing-philosophy)
+- [Adding New Problems](#-adding-new-problems)
+- [Learning Content & References](#-learning-content--references)
+- [What You'll Learn](#-what-youll-learn)
+- [Table of Contents (Algorithms)](#-table-of-contents-algorithms)
+- [Scripts](#-scripts)
+- [Benchmarking](#-benchmarking)
+- [Contributing](#-contributing)
+- [Tips for Effective DSA Practice](#-tips-for-effective-dsa-practice)
+- [FAQ](#-faq)
+- [License](#-license)
+- [Contact & Support](#-contact--support)
+
+---
+
+## 🚀 How to Use This Repo
+
+1. **Browse Algorithm Categories:**  
+   Use the [Algorithm Categories](#-algorithm-categories) section below to jump to any topic. Each category has its own README with theory, patterns, and references.
+
+2. **Read the Category README:**  
+   Start with the category README to understand the core concepts, pros/cons, and common pitfalls.
+
+3. **Pick a Problem:**  
+   Choose a problem from the category folder. Read the problem statement and notes.
+
+4. **Solve and Test:**  
+   Implement your solution in TypeScript, write tests, and run them using Jest.
+
+5. **Benchmark (Optional):**  
+   Use the built-in benchmarking tools to compare solution performance.
+
+6. **Reflect and Document:**  
+   Write down your approach, edge cases, and what you learned in the problem’s markdown file.
+
 ---
 
 ## 📁 Project Structure
@@ -48,49 +89,55 @@ src/algorithms/hash-map/easy/twoSum/
 
 - **Empty folders** (such as `notes/`) are tracked using a `.gitkeep` file so they are included in the repository.
 
-### 📂 Algorithm Categories
+> **Navigation Tip:**  
+> - [Algorithm Categories](#-algorithm-categories) links to each category’s overview/notes.  
+> - [Table of Contents (Algorithms)](#-table-of-contents-algorithms) links to problem folders for direct access to code and solutions.
 
-The `src/algorithms` folder contains the following categories (each with `easy`, `medium`, `hard` subfolders):
+---
 
-- `array`
-- `backtracking`
-- `binary-search`
-- `bit-manipulation`
-- `buffer`
-- `caching`
-- `design-patterns`
-- `divide-and-conquer`
-- `dynamic-programming`
-- `error-handling`
-- `event-loop`
-- `file-system`
-- `functional`
-- `graph`
-- `greedy`
-- `hash-map`
-- `hash-table`
-- `heap`
-- `linked-list`
-- `map-set`
-- `math`
-- `networking`
-- `node-api`
-- `object`
-- `oop`
-- `promise-async`
-- `queue`
-- `recursion`
-- `searching`
-- `security`
-- `sliding-window`
-- `sorting`
-- `stack`
-- `stream`
-- `string`
-- `testing`
-- `tree`
-- `two-pointers`
-- `web-api`
+## 📂 Algorithm Categories
+
+> 📖 **Each algorithm category folder contains a detailed README with theory, patterns, pros/cons, pitfalls, and references. Use these as your quick reference before diving into problems!**
+
+- [Array](src/algorithms/array/README.md)
+- [Backtracking](src/algorithms/backtracking/README.md)
+- [Binary Search](src/algorithms/binary-search/README.md)
+- [Bit Manipulation](src/algorithms/bit-manipulation/README.md)
+- [Buffer](src/algorithms/buffer/README.md)
+- [Caching](src/algorithms/caching/README.md)
+- [Design Patterns](src/algorithms/design-patterns/README.md)
+- [Divide and Conquer](src/algorithms/divide-and-conquer/README.md)
+- [Dynamic Programming](src/algorithms/dynamic-programming/README.md)
+- [Error Handling](src/algorithms/error-handling/README.md)
+- [Event Loop](src/algorithms/event-loop/README.md)
+- [File System](src/algorithms/file-system/README.md)
+- [Functional](src/algorithms/functional/README.md)
+- [Graph](src/algorithms/graph/README.md)
+- [Greedy](src/algorithms/greedy/README.md)
+- [Hash Map](src/algorithms/hash-map/README.md)
+- [Hash Table](src/algorithms/hash-table/README.md)
+- [Heap](src/algorithms/heap/README.md)
+- [Linked List](src/algorithms/linked-list/README.md)
+- [Map/Set](src/algorithms/map-set/README.md)
+- [Math](src/algorithms/math/README.md)
+- [Networking](src/algorithms/networking/README.md)
+- [Node.js API](src/algorithms/node-api/README.md)
+- [Object](src/algorithms/object/README.md)
+- [OOP](src/algorithms/oop/README.md)
+- [Promise & Async](src/algorithms/promise-async/README.md)
+- [Queue](src/algorithms/queue/README.md)
+- [Recursion](src/algorithms/recursion/README.md)
+- [Searching](src/algorithms/searching/README.md)
+- [Security](src/algorithms/security/README.md)
+- [Sliding Window](src/algorithms/sliding-window/README.md)
+- [Sorting](src/algorithms/sorting/README.md)
+- [Stack](src/algorithms/stack/README.md)
+- [Stream](src/algorithms/stream/README.md)
+- [String](src/algorithms/string/README.md)
+- [Testing](src/algorithms/testing/README.md)
+- [Tree](src/algorithms/tree/README.md)
+- [Two Pointers](src/algorithms/two-pointers/README.md)
+- [Web API](src/algorithms/web-api/README.md)
 
 ---
 
@@ -171,13 +218,21 @@ The `src/algorithms` folder contains the following categories (each with `easy`,
 
 - **Recommended External Resources:**
   - [LeetCode Explore - Top Interview 150](https://leetcode.com/studyplan/top-interview-150/)
-  - [NeetCode Patterns](https://neetcode.io/roadmap)
-  - [GeeksforGeeks DSA Sheet](https://www.geeksforgeeks.org/dsa-sheet-by-love-babbar/)
+  - [LeetCode Patterns (Discuss)](https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions)
+  - [NeetCode Roadmap & Patterns](https://neetcode.io/roadmap)
+  - [GeeksforGeeks DSA Sheet by Love Babbar](https://www.geeksforgeeks.org/dsa-sheet-by-love-babbar/)
+  - [GeeksforGeeks DSA Topic List](https://www.geeksforgeeks.org/data-structures/)
   - [freeCodeCamp DSA Curriculum](https://www.freecodecamp.org/learn/)
-  - [MIT OpenCourseWare - Introduction to Algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/)
+  - [MIT OpenCourseWare - Introduction to Algorithms (6.006)](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/)
   - [CS50 Harvard - Data Structures](https://cs50.harvard.edu/x/2024/weeks/5/)
-  - [Big-O Cheat Sheet](https://www.bigocheatsheet.com/)
-  - [LeetCode Discuss - Patterns](https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions)
+  - [Big-O Complexity Cheat Sheet](https://www.bigocheatsheet.com/)
+  - [VisuAlgo - Visualize Algorithms](https://visualgo.net/en)
+  - [AlgoExpert Patterns List](https://www.algoexpert.io/patterns)
+  - [YouTube: WilliamFiset Data Structures](https://www.youtube.com/playlist?list=PLDV1Zeh2NRsD06x59fxczdWLhJJ2t-8bU)
+  - [YouTube: freeCodeCamp.org - DSA Course](https://www.youtube.com/watch?v=8hly31xKli0)
+  - [InterviewBit DSA Topics](https://www.interviewbit.com/courses/programming/)
+  - [Stanford CS97SI: Competitive Programming and Problem Solving](https://web.stanford.edu/class/cs97si/)
+  - [Princeton Algorithms, Part I & II (Coursera)](https://www.coursera.org/specializations/algorithms)
 
 ---
 
@@ -191,7 +246,7 @@ The `src/algorithms` folder contains the following categories (each with `easy`,
 
 ---
 
-## 📚 Table of Contents
+## 📚 Table of Contents (Algorithms)
 
 - [Array Problems](src/algorithms/array/)
 - [Backtracking Problems](src/algorithms/backtracking/)
@@ -234,9 +289,8 @@ The `src/algorithms` folder contains the following categories (each with `easy`,
 - [Two Pointers Problems](src/algorithms/two-pointers/)
   - [Two Sum II](src/algorithms/two-pointers/easy/twoSumII/twoSumII.md)
 - [Web API](src/algorithms/web-api/)
-- [More Coming Soon!](#contributing)
 
-Each folder will have its own README for deep dives into that topic or pattern.
+Each folder has its own README for deep dives into that topic or pattern.
 
 ---
 
@@ -278,8 +332,6 @@ This project includes **robust, automated benchmarking** for all solutions:
 
 - **Sample output:**
 
-  Benchmarking twoSum on various input patterns and sizes...
-
   | Case                | ops/sec   | ms/op   | ±RME   | samples |
   |---------------------|----------:|--------:|-------:|--------:|
   | Sequential (n=100)  | 50000.00  | 0.0200  | ±1.23% |     100 |
@@ -301,6 +353,7 @@ This project includes **robust, automated benchmarking** for all solutions:
 
 Contributions are welcome!  
 You can add new problems, solutions, improve test coverage, or add benchmarks.
+
 **How to contribute:**
 1. Fork the repo and create a new branch.
 2. Add your problem/solution/test in the correct folder.
@@ -352,9 +405,12 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
-## 🌟 Happy Learning and Coding!
+## 📬 Contact & Support
+
+- For questions, suggestions, or bug reports, please [open an issue](https://github.com/saurabh11sharma/dsa-practice/issues).
+- You can also reach out via GitHub Discussions or connect on [LinkedIn](https://www.linkedin.com/in/saurabh11sharma/).
 
 ---
+
 ⭐️ If you find this project helpful, please consider giving it a star!  
 Your support helps others discover this resource and motivates further development.
----
