@@ -21,12 +21,13 @@ The project is organized as follows:
 dsa-practice/
 ├── src/
 │   ├── algorithms/
-│   │   ├── <category>/
-│   │   │   ├── <difficulty>/
-│   │   │   │   ├── <problem>/
+│   │   ├── <category>/                # e.g., hash-map, array, string, etc.
+│   │   │   ├── <difficulty>/          # easy, medium, hard
+│   │   │   │   ├── <problem>/         # e.g., twoSum, groupAnagrams
 │   │   │   │   │   ├── <problem>.md      # Problem-specific README (theory, patterns, tips)
-│   │   │   │   │   ├── <problem>.ts      # Solution implementation
-│   │   │   │   │   └── <problem>.test.ts # Jest test file
+│   │   │   │   │   ├── <problem>.ts      # Solution implementation (TypeScript)
+│   │   │   │   │   ├── <problem>.test.ts # Jest test file
+│   │   │   │   │   └── notes/            # (optional) Empty folder for personal notes (.gitkeep)
 │   ├── utils/
 │   │   └── testUtils.ts                  # Shared test helpers (generators, validators)
 ├── package.json
@@ -41,8 +42,55 @@ dsa-practice/
 src/algorithms/hash-map/easy/twoSum/
   ├── twoSum.md
   ├── twoSum.ts
-  └── twoSum.test.ts
+  ├── twoSum.test.ts
+  └── notes/           # (optional, tracked with .gitkeep)
 ```
+
+- **Empty folders** (such as `notes/`) are tracked using a `.gitkeep` file so they are included in the repository.
+
+### 📂 Algorithm Categories
+
+The `src/algorithms` folder contains the following categories (each with `easy`, `medium`, `hard` subfolders):
+
+- `array`
+- `backtracking`
+- `binary-search`
+- `bit-manipulation`
+- `buffer`
+- `caching`
+- `design-patterns`
+- `divide-and-conquer`
+- `dynamic-programming`
+- `error-handling`
+- `event-loop`
+- `file-system`
+- `functional`
+- `graph`
+- `greedy`
+- `hash-map`
+- `hash-table`
+- `heap`
+- `linked-list`
+- `map-set`
+- `math`
+- `networking`
+- `node-api`
+- `object`
+- `oop`
+- `promise-async`
+- `queue`
+- `recursion`
+- `searching`
+- `security`
+- `sliding-window`
+- `sorting`
+- `stack`
+- `stream`
+- `string`
+- `testing`
+- `tree`
+- `two-pointers`
+- `web-api`
 
 ---
 
@@ -58,6 +106,10 @@ src/algorithms/hash-map/easy/twoSum/
 3. **Create Tests:**  
    Add test cases in `<problem>.test.ts` using Jest and the provided test utilities.  
    Tests cover a range of input sizes (small to large), including random and edge cases.
+
+4. **(Optional) Add Notes:**  
+   Use the `notes/` folder inside each problem for personal notes, scratch work, or additional resources.  
+   Add a `.gitkeep` file to ensure the folder is tracked by git.
 
 ---
 
@@ -105,6 +157,9 @@ src/algorithms/hash-map/easy/twoSum/
 3. **Add tests:**  
    Create a test file `<problem>.test.ts` in the same folder and use the shared test utilities for consistency.
 
+4. **(Optional) Add notes:**  
+   Create a `notes/` folder inside the problem directory and add a `.gitkeep` file if you want to track empty folders for personal notes.
+
 ---
 
 ## 📚 Learning Content & References
@@ -138,10 +193,47 @@ src/algorithms/hash-map/easy/twoSum/
 
 ## 📚 Table of Contents
 
+- [Array Problems](src/algorithms/array/)
+- [Backtracking Problems](src/algorithms/backtracking/)
+- [Binary Search Problems](src/algorithms/binary-search/)
+- [Bit Manipulation Problems](src/algorithms/bit-manipulation/)
+- [Buffer Problems](src/algorithms/buffer/)
+- [Caching Problems](src/algorithms/caching/)
+- [Design Patterns](src/algorithms/design-patterns/)
+- [Divide and Conquer](src/algorithms/divide-and-conquer/)
+- [Dynamic Programming](src/algorithms/dynamic-programming/)
+- [Error Handling](src/algorithms/error-handling/)
+- [Event Loop](src/algorithms/event-loop/)
+- [File System](src/algorithms/file-system/)
+- [Functional Programming](src/algorithms/functional/)
+- [Graph Problems](src/algorithms/graph/)
+- [Greedy Algorithms](src/algorithms/greedy/)
 - [Hash Map Problems](src/algorithms/hash-map/)
   - [Two Sum](src/algorithms/hash-map/easy/twoSum/twoSum.md)
+- [Hash Table Problems](src/algorithms/hash-table/)
+- [Heap Problems](src/algorithms/heap/)
+- [Linked List Problems](src/algorithms/linked-list/)
+- [Map/Set Problems](src/algorithms/map-set/)
+- [Math Problems](src/algorithms/math/)
+- [Networking](src/algorithms/networking/)
+- [Node.js API](src/algorithms/node-api/)
+- [Object Problems](src/algorithms/object/)
+- [OOP Patterns](src/algorithms/oop/)
+- [Promise & Async](src/algorithms/promise-async/)
+- [Queue Problems](src/algorithms/queue/)
+- [Recursion](src/algorithms/recursion/)
+- [Searching](src/algorithms/searching/)
+- [Security](src/algorithms/security/)
+- [Sliding Window](src/algorithms/sliding-window/)
+- [Sorting](src/algorithms/sorting/)
+- [Stack Problems](src/algorithms/stack/)
+- [Stream](src/algorithms/stream/)
+- [String Problems](src/algorithms/string/)
+- [Testing](src/algorithms/testing/)
+- [Tree Problems](src/algorithms/tree/)
 - [Two Pointers Problems](src/algorithms/two-pointers/)
   - [Two Sum II](src/algorithms/two-pointers/easy/twoSumII/twoSumII.md)
+- [Web API](src/algorithms/web-api/)
 - [More Coming Soon!](#contributing)
 
 Each folder will have its own README for deep dives into that topic or pattern.
@@ -172,7 +264,7 @@ This project includes **robust, automated benchmarking** for all solutions:
 - **How to run:**  
   ```sh
   npm run benchmarks
-
+  ```
 - **What it does:**
   - Finds and runs all `*.benchmark.ts` files (wherever they are in the repo).
   - Benchmarks each solution on a variety of input sizes and patterns (sorted, reverse, random, edge cases).
@@ -219,6 +311,7 @@ You can add new problems, solutions, improve test coverage, or add benchmarks.
 - Follow the existing folder and file structure.
 - Write clear, commented code and tests.
 - Add learning notes and references in each problem’s README.
+- If you add a new empty folder (e.g., for notes), include a `.gitkeep` file so it is tracked by git.
 
 ---
 
@@ -239,7 +332,8 @@ You can add new problems, solutions, improve test coverage, or add benchmarks.
 A: Absolutely! The structure, explanations, and test coverage are designed for real-world interviews.
 
 **Q: How do I add a new algorithm or pattern?**  
-A: Create a new folder under `src/algorithms/<category>/<difficulty>/<problem>/` and follow the template.
+A: Create a new folder under `src/algorithms/<category>/<difficulty>/<problem>/` and follow the template.  
+If you want to track an empty folder (e.g., for notes), add a `.gitkeep` file inside it.
 
 **Q: Can I use JavaScript instead of TypeScript?**  
 A: The project is TypeScript-first for type safety, but you can adapt solutions to JavaScript if needed.
