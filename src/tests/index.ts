@@ -1,2 +1,2 @@
-import "./twoSumProblem.spec";
-import "./twoSumProblem2.spec";
+import './twoSumProblem.spec';
+import './twoSumProblem2.spec';

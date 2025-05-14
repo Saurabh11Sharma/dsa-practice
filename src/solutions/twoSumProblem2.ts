@@ -33,5 +33,8 @@
  * twoSumProblem([2, 7, 11, 15], 9) // returns [0, 1]
  */
 export function twoSumProblem(nums: number[], target: number): number[] {
-    // Write your solution here
+  // Placeholder to avoid ESLint unused-vars error
+  void nums;
+  void target;
+  return [];
 }

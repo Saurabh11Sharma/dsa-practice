@@ -56,20 +56,20 @@
  * twoSumSorted([2, 7, 11, 15], 9) // returns [1, 2]
  */
 export function twoSumSorted(numbers: number[], target: number): number[] {
-    let left = 0;
-    let right = numbers.length - 1;
+  let left = 0;
+  let right = numbers.length - 1;
 
-    while (left < right) {
-        const sum = numbers[left] + numbers[right];
-        if (sum === target) {
-            // Return 1-based indices
-            return [left + 1, right + 1];
-        } else if (sum < target) {
-            left++;
-        } else {
-            right--;
-        }
+  while (left < right) {
+    const sum = numbers[left] + numbers[right];
+    if (sum === target) {
+      // Return 1-based indices
+      return [left + 1, right + 1];
+    } else if (sum < target) {
+      left++;
+    } else {
+      right--;
     }
-    // If no solution is found (should not happen as per constraints)
-    return [];
+  }
+  // If no solution is found (should not happen as per constraints)
+  return [];
 }
