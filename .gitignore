@@ -11,6 +11,8 @@ yarn-error.log*
 
 # Environment files
 .env
+.env.local
+.env.*.local
 
 # VSCode settings
 .vscode/
@@ -18,3 +20,25 @@ yarn-error.log*
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Coverage reports
+coverage/
+*.lcov
+
+# IDE files
+.idea/
+*.iml
+
+# Mac system files
+.AppleDouble
+.LSOverride
+
+# Windows system files
+ehthumbs.db
+Desktop.ini
+
+# Optional npm cache directory
+.npm
+
+# TypeScript cache
+*.tsbuildinfo
