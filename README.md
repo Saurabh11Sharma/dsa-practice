@@ -1,7 +1,16 @@
-# DSA Practice Project
+[![GitHub stars](https://img.shields.io/github/stars/saurabh11sharma/dsa-practice.svg?style=social)](https://github.com/saurabh11sharma/dsa-practice/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/saurabh11sharma/dsa-practice.svg?style=social)](https://github.com/saurabh11sharma/dsa-practice/network)
+[![GitHub issues](https://img.shields.io/github/issues/saurabh11sharma/dsa-practice.svg)](https://github.com/saurabh11sharma/dsa-practice/issues)
+[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-This project is designed to help you practice and master Data Structures and Algorithms (DSA) through hands-on problem-solving and coding exercises in TypeScript.
+# 📚 DSA Practice Project
 
+This project is designed to help you **practice and master Data Structures and Algorithms (DSA)** through hands-on problem-solving and coding exercises in TypeScript.  
+It is structured like a "DSA Book"—with categorized problems, detailed solutions, robust testing, and rich learning content.
+
+---
+⭐️ If you find this project helpful, please consider giving it a star!  
+Your support helps others discover this resource and motivates further development.
 ---
 
 ## 📁 Project Structure
@@ -9,20 +18,30 @@ This project is designed to help you practice and master Data Structures and Alg
 The project is organized as follows:
 
 ```
-dsa-practice
-├── src
-│   ├── problems
-│   │   └── <problem>.ts         # Problem statements and descriptions
-│   ├── solutions
-│   │   └── <solution>.ts        # Solution implementations (your code goes here)
-│   └── tests
-│       └── <test>.spec.ts       # Test cases for each problem/solution
-├── dist/                        # Compiled JavaScript output (auto-generated)
-├── node_modules/                # npm dependencies (auto-generated)
-├── package.json                 # npm configuration and scripts
-├── tsconfig.json                # TypeScript configuration
-├── .gitignore                   # Files and folders to ignore in git
-└── README.md                    # Project documentation
+dsa-practice/
+├── src/
+│   ├── algorithms/
+│   │   ├── <category>/
+│   │   │   ├── <difficulty>/
+│   │   │   │   ├── <problem>/
+│   │   │   │   │   ├── <problem>.md      # Problem-specific README (theory, patterns, tips)
+│   │   │   │   │   ├── <problem>.ts      # Solution implementation
+│   │   │   │   │   └── <problem>.test.ts # Jest test file
+│   ├── utils/
+│   │   └── testUtils.ts                  # Shared test helpers (generators, validators)
+├── package.json
+├── tsconfig.json
+├── jest.config.js
+├── README.md
+└── ... (other config files)
+```
+
+**Example:**
+```
+src/algorithms/hash-map/easy/twoSum/
+  ├── twoSum.md
+  ├── twoSum.ts
+  └── twoSum.test.ts
 ```
 
 ---
@@ -30,15 +49,15 @@ dsa-practice
 ## 📝 Workflow
 
 1. **Define Problems:**  
-   Write clear problem statements in `src/problems/`.
+   Write clear problem statements and learning notes in `<problem>.md`.
 
 2. **Write Solutions:**  
-   Implement your solution in `src/solutions/`.  
+   Implement your solution in `<problem>.ts`.  
    Each solution file should export a function matching the problem.
 
 3. **Create Tests:**  
-   Add test cases in `src/tests/` using the provided test runner format.  
-   Tests are dynamic and cover a range of input sizes (small to large), measuring both time and memory usage.
+   Add test cases in `<problem>.test.ts` using Jest and the provided test utilities.  
+   Tests cover a range of input sizes (small to large), including random and edge cases, and can measure both time and memory usage.
 
 ---
 
@@ -55,68 +74,152 @@ dsa-practice
    npm install
    ```
 
-3. **Run all tests (compiles and executes all test files):**
+3. **Run all tests:**
    ```sh
    npm test
    ```
-
-   > This will compile your TypeScript files and run all test cases in `src/tests/`, reporting pass/fail, execution time, and memory usage for each case.
+   > Runs all `.test.ts` and `.spec.ts` files using Jest.  
+   > Reports pass/fail, and you can add time/memory checks if desired.
 
 ---
 
-## 🧪 Testing Details
+## 🧪 Testing Philosophy
 
-- **Test files** are located in `src/tests/` and named `<problem>.spec.ts`.
-- Each test file:
-  - Dynamically generates test cases (small, large, random).
-  - Measures execution time and memory usage for each case.
-  - Compares results against ideal thresholds (configurable in each test file).
-  - Prints a summary for each test case.
-
-**Example output:**
-```
-Test case 1 (Small array, simple case): Passed | Time: 0.123 ms ✅ | Memory: 2.34 KB ✅
-Test case 2 (Large array, size=100000): Passed | Time: 5.678 ms ✅ | Memory: 12.56 KB ✅
-```
+- **Jest** is used for all tests.
+- **Test files** are colocated with solutions for clarity.
+- **Test cases** include:
+  - Small/edge cases
+  - Large arrays for performance
+  - Randomized cases for robustness (with deterministic seeds if needed)
+- **Helpers** in `testUtils.ts` make it easy to generate and validate cases.
+- **Time and memory checks** can be included for performance-sensitive problems.
 
 ---
 
 ## 🏗️ Adding New Problems
 
 1. **Add a problem statement:**  
-   Create a new file in `src/problems/` (e.g., `twoSumProblem.ts`) and describe the problem.
+   Create a new folder in the appropriate category/difficulty (e.g., `src/algorithms/hash-map/easy/twoSum/`) and add `<problem>.md` for the description and learning notes.
 
 2. **Add your solution:**  
-   Create a corresponding file in `src/solutions/` (e.g., `twoSumProblem.ts`) and export your function.
+   Implement your solution in `<problem>.ts` in the same folder.
 
 3. **Add tests:**  
-   Create a test file in `src/tests/` (e.g., `twoSumProblem.spec.ts`) and follow the dynamic test runner format.
+   Create a test file `<problem>.test.ts` in the same folder and use the shared test utilities for consistency.
+
+---
+
+## 📚 Learning Content & References
+
+- **Project Learning READMEs:**
+  - [Two Sum (Hash Map, Easy)](src/algorithms/hash-map/easy/twoSum/twoSum.md)
+  - [Two Sum II (Two Pointers, Easy)](src/algorithms/two-pointers/easy/twoSumII/twoSumII.md)
+  - More coming soon in each algorithm/topic folder!
+
+- **Recommended External Resources:**
+  - [LeetCode Explore - Top Interview 150](https://leetcode.com/studyplan/top-interview-150/)
+  - [NeetCode Patterns](https://neetcode.io/roadmap)
+  - [GeeksforGeeks DSA Sheet](https://www.geeksforgeeks.org/dsa-sheet-by-love-babbar/)
+  - [freeCodeCamp DSA Curriculum](https://www.freecodecamp.org/learn/)
+  - [MIT OpenCourseWare - Introduction to Algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/)
+  - [CS50 Harvard - Data Structures](https://cs50.harvard.edu/x/2024/weeks/5/)
+  - [Big-O Cheat Sheet](https://www.bigocheatsheet.com/)
+  - [LeetCode Discuss - Patterns](https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions)
+
+---
+
+## 🏆 What You'll Learn
+
+- **Core DSA Patterns:** Hashing, two pointers, sliding window, binary search, recursion, dynamic programming, and more.
+- **How to Analyze Complexity:** Understand and compare time/space trade-offs.
+- **How to Write Clean Code:** Idiomatic TypeScript, clear interfaces, and maintainable structure.
+- **How to Test Effectively:** Write robust, scalable, and meaningful tests.
+- **How to Communicate Solutions:** Each README is a mini-lesson, helping you explain your approach in interviews.
+
+---
+
+## 📚 Table of Contents
+
+- [Hash Map Problems](src/algorithms/hash-map/)
+  - [Two Sum](src/algorithms/hash-map/easy/twoSum/twoSum.md)
+- [Two Pointers Problems](src/algorithms/two-pointers/)
+  - [Two Sum II](src/algorithms/two-pointers/easy/twoSumII/twoSumII.md)
+- [More Coming Soon!](#contributing)
+
+Each folder will have its own README for deep dives into that topic or pattern.
 
 ---
 
 ## 🛠️ Scripts
 
-- **Build the project:**  
-  ```sh
-  npm run build
-  ```
-  Compiles TypeScript files to `dist/`.
-
-- **Run all tests:**  
-  ```sh
-  npm test
-  ```
-  Compiles and runs all test files in `src/tests/`.
+- **Build:**  
+  `npm run build` — Compiles TypeScript to `dist/`.
+- **Test:**  
+  `npm test` — Runs all Jest tests.
+- **Lint:**  
+  `npm run lint` — Lints all code with ESLint.
+- **Format:**  
+  `npm run format` — Checks formatting with Prettier.
+- **Format Fix:**  
+  `npm run format:fix` — Auto-formats code and markdown.
 
 ---
 
 ## 🤝 Contributing
 
 Contributions are welcome!  
-You can add new problems, solutions, or improve test coverage. Please follow the existing structure for consistency.
+You can add new problems, solutions, or improve test coverage.  
+**How to contribute:**
+1. Fork the repo and create a new branch.
+2. Add your problem/solution/test in the correct folder.
+3. Add or update the relevant README.
+4. Open a pull request with a clear description.
+
+**Guidelines:**
+- Follow the existing folder and file structure.
+- Write clear, commented code and tests.
+- Add learning notes and references in each problem’s README.
+
+---
+
+## 💡 Tips for Effective DSA Practice
+
+- **Don’t just code—explain!** Write out your reasoning in the README.
+- **Try multiple approaches:** Brute force, optimal, and alternatives.
+- **Test edge cases:** Empty arrays, duplicates, negatives, large inputs.
+- **Review patterns:** Recognize when to use hash maps, two pointers, etc.
+- **Reflect:** After solving, write down what you learned and what you’d do differently.
+
+---
+
+## 💬 FAQ
+
+**Q: Can I use this project for interview prep?**  
+A: Absolutely! The structure, explanations, and test coverage are designed for real-world interviews.
+
+**Q: How do I add a new algorithm or pattern?**  
+A: Create a new folder under `src/algorithms/<category>/<difficulty>/<problem>/` and follow the template.
+
+**Q: Can I use JavaScript instead of TypeScript?**  
+A: The project is TypeScript-first for type safety, but you can adapt solutions to JavaScript if needed.
+
+**Q: How do I run only one test file?**  
+A: Use Jest’s pattern matching, e.g.:
+```sh
+npx jest src/algorithms/hash-map/easy/twoSum/twoSum.test.ts
+```
 
 ---
 
 ## 📄 License
 
 This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+## 🌟 Happy Learning and Coding!
+
+---
+⭐️ If you find this project helpful, please consider giving it a star!  
+Your support helps others discover this resource and motivates further development.
+---

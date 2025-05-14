@@ -41,9 +41,9 @@
  * @param target - Target sum
  * @returns Indices of the two numbers
  * @example
- * twoSumProblem([2, 7, 11, 15], 9) // returns [0, 1]
+ * twoSum([2, 7, 11, 15], 9) // returns [0, 1]
  */
-export function twoSumProblem(nums: number[], target: number): number[] {
+export function twoSum(nums: number[], target: number): number[] {
   const map = new Map<number, number>();
   for (let i = 0; i < nums.length; i++) {
     const complement = target - nums[i];

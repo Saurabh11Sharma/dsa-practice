@@ -1,16 +1,17 @@
 {
   "name": "dsa-practice",
   "version": "1.0.0",
-  "description": "A project for practicing data structures and algorithms.",
+  "description": "A book-style, test-driven DSA practice resource in TypeScript. Learn, code, and ace your interviews!",
   "scripts": {
     "build": "tsc",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
-    "format": "prettier --check \"src/**/*.{ts,tsx}\"",
-    "format:fix": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "format": "prettier --check \"src/**/*.{ts,tsx,md}\"",
+    "format:fix": "prettier --write \"src/**/*.{ts,tsx,md}\"",
     "prepare": "husky install",
-    "test": "npm run build && node dist/tests/index.js"
+    "test": "jest"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.14",
     "@types/node": "^22.15.18",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.32.1",
@@ -18,8 +19,10 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "husky": "^8.0.0",
+    "jest": "^29.7.0",
     "lint-staged": "^15.0.0",
     "prettier": "^3.0.0",
+    "ts-jest": "^29.3.3",
     "typescript": "^4.0.0"
   },
   "lint-staged": {
@@ -35,11 +38,18 @@
   "keywords": [
     "data-structures",
     "algorithms",
-    "typescript"
+    "typescript",
+    "dsa",
+    "interview-prep",
+    "two-pointers",
+    "hash-map",
+    "sliding-window",
+    "binary-search",
+    "leetcode",
+    "competitive-programming",
+    "learning",
+    "open-source"
   ],
   "author": "Saurabh Sharma",
-  "license": "MIT",
-  "dependencies": {
-    "chalk": "^5.4.1"
-  }
+  "license": "MIT"
 }

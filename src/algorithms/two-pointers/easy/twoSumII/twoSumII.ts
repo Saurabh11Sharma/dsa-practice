@@ -47,20 +47,21 @@
  * @param target Target sum
  * @returns [index1, index2] (1-based indices)
  */
-export function twoSumProblem2(numbers: number[], target: number): number[] {
-  let leftIndex = 0;
-  let rightIndex = numbers.length - 1;
+export function twoSumII(numbers: number[], target: number): number[] {
+  let left = 0;
+  let right = numbers.length - 1;
 
-  while (leftIndex < rightIndex) {
-    const sum = numbers[leftIndex] + numbers[rightIndex];
+  while (left < right) {
+    const sum = numbers[left] + numbers[right];
     if (sum === target) {
-      return [leftIndex + 1, rightIndex + 1];
+      // Return 1-based indices
+      return [left + 1, right + 1];
     } else if (sum < target) {
-      leftIndex++;
+      left++;
     } else {
-      rightIndex--;
+      right--;
     }
   }
-
+  // If no solution found (should not happen per constraints)
   return [];
 }
