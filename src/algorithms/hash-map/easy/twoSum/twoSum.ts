@@ -44,14 +44,14 @@
  * twoSum([2, 7, 11, 15], 9) // returns [0, 1]
  */
 export function twoSum(nums: number[], target: number): number[] {
-  const map = new Map<number, number>();
+  const hashMap = new Map<number, number>();
+
   for (let i = 0; i < nums.length; i++) {
-    const complement = target - nums[i];
-    if (map.has(complement)) {
-      return [map.get(complement)!, i];
+    const difference = target - nums[i];
+    if (hashMap.has(difference)) {
+      return [hashMap.get(difference)!, i];
     }
-    map.set(nums[i], i);
+    hashMap.set(nums[i], i);
   }
-  // If no solution is found (should not happen as per constraints)
   return [];
 }
